@@ -1,0 +1,23 @@
+<div>
+    <p>FIlter: {{filterValue}}</p>
+</div>
+
+<dx-data-grid id="gridContainer" [dataSource]="dataSource">
+
+  <dxo-paging [enabled]="false"></dxo-paging>
+  <dxo-editing mode="batch" [allowUpdating]="true"></dxo-editing>
+  <dxo-filter-panel [visible]="true"></dxo-filter-panel>
+  <dxo-header-filter [visible]="true"></dxo-header-filter>
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+
+  <dxi-column dataField="Prefix" caption="Title" [width]="70" [allowEditing]="true"></dxi-column>
+  <dxi-column dataField="FirstName" [allowEditing]="false"></dxi-column>
+  <dxi-column dataField="LastName" [allowEditing]="false"></dxi-column>
+  <dxi-column dataField="Position" [width]="170" [allowEditing]="false"></dxi-column>
+  <dxi-column dataField="StateID" caption="State" [width]="125">
+    <dxo-lookup [dataSource]="states" displayExpr="Name" valueExpr="ID">
+    </dxo-lookup>
+  </dxi-column>
+  <dxi-column dataField="BirthDate" [showEditorAlways]="true" dataType="date">
+  </dxi-column>
+</dx-data-grid>
