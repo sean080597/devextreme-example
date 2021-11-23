@@ -1,0 +1,19 @@
+<dx-button text="Enter Full Screen" (onClick)="onClick($event)"></dx-button>
+<div class="container" id="gridContainer">
+  <button type="button" (click)="onExitFullScreen()">Exit full screen</button>
+  <dx-data-grid [dataSource]="dataSource" [showBorders]="true">
+    <dxo-paging [enabled]="false"></dxo-paging>
+    <dxo-editing mode="batch" [allowUpdating]="true">
+    </dxo-editing>
+    <dxi-column dataField="Prefix" caption="Title" [width]="70" [allowEditing]="true"></dxi-column>
+    <dxi-column dataField="FirstName" [allowEditing]="false"></dxi-column>
+    <dxi-column dataField="LastName" [allowEditing]="false"></dxi-column>
+    <dxi-column dataField="Position" [width]="170" [allowEditing]="false"></dxi-column>
+    <dxi-column dataField="StateID" caption="State" [width]="125">
+      <dxo-lookup [dataSource]="states" displayExpr="Name" valueExpr="ID">
+      </dxo-lookup>
+    </dxi-column>
+    <dxi-column dataField="BirthDate" [showEditorAlways]="true" dataType="date">
+    </dxi-column>
+  </dx-data-grid>
+</div>

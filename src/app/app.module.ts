@@ -7,13 +7,16 @@ import { AppComponent } from './app.component';
 import { ExThemeComponent } from './ex-theme/ex-theme.component';
 import { ExFilterAsStringComponent } from './ex-filter-as-string/ex-filter-as-string.component';
 import { ExFilteringComponent } from './ex-filtering/ex-filtering.component';
+import { ExScreenfullComponent } from './ex-screenfull/ex-screenfull.component';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ExThemeComponent,
     ExFilterAsStringComponent,
-    ExFilteringComponent
+    ExFilteringComponent,
+    ExScreenfullComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,7 @@ import { ExFilteringComponent } from './ex-filtering/ex-filtering.component';
     DxSelectBoxModule,
     DxTagBoxModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
