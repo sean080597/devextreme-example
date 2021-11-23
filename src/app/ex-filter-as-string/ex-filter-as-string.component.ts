@@ -345,14 +345,20 @@ export class ExFilterAsStringComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngAfterViewInit(): void {
-    console.log('ngAfterViewInit');
     this.dataGrid.filterPanel.customizeText = (evt) => {
-      console.log('customizeText ngAfterViewInit ==> ', evt.text);
       this.filterValue = evt.text
     }
   }
 
   ngOnInit(): void {
     console.log('ngOnInit');
+  }
+
+  onEditorPreparing(evt){
+    console.log('onEditorPreparing ==> ', evt)
+  }
+
+  onEditorPrepared(evt){
+    console.log('onEditorPrepared ==> ', evt)
   }
 }

@@ -2,7 +2,7 @@
     <p>FIlter: {{filterValue}}</p>
 </div>
 
-<dx-data-grid id="gridContainer" [dataSource]="dataSource">
+<dx-data-grid id="gridContainer" [dataSource]="dataSource" (onEditorPreparing)="onEditorPreparing($event)" (onEditorPrepared)="onEditorPrepared($event)">
 
   <dxo-paging [enabled]="false"></dxo-paging>
   <dxo-editing mode="batch" [allowUpdating]="true"></dxo-editing>
